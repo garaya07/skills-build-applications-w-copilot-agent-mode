@@ -1,9 +1,9 @@
 from django.test import TestCase
-from .models import User, Team, Activity, Workout, Leaderboard
+from .models import UserProfile, Team, Activity, Workout, Leaderboard
 
-class UserModelTest(TestCase):
+class UserProfileModelTest(TestCase):
     def test_create_user(self):
-        user = User.objects.create(email='test@example.com', name='Test User', team='marvel')
+        user = UserProfile.objects.create(email='test@example.com', name='Test User', team='marvel')
         self.assertEqual(user.email, 'test@example.com')
 
 class TeamModelTest(TestCase):
@@ -13,7 +13,7 @@ class TeamModelTest(TestCase):
 
 class ActivityModelTest(TestCase):
     def test_create_activity(self):
-        user = User.objects.create(email='test2@example.com', name='Test2', team='dc')
+        user = UserProfile.objects.create(email='test2@example.com', name='Test2', team='dc')
         activity = Activity.objects.create(user=user, activity_type='run', duration=30, date='2023-01-01')
         self.assertEqual(activity.activity_type, 'run')
 
@@ -24,6 +24,6 @@ class WorkoutModelTest(TestCase):
 
 class LeaderboardModelTest(TestCase):
     def test_create_leaderboard(self):
-        user = User.objects.create(email='test3@example.com', name='Test3', team='marvel')
+        user = UserProfile.objects.create(email='test3@example.com', name='Test3', team='marvel')
         leaderboard = Leaderboard.objects.create(user=user, score=100, rank=1)
         self.assertEqual(leaderboard.rank, 1)

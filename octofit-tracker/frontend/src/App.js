@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './App.css';
 import Activities from './components/Activities';
 import Leaderboard from './components/Leaderboard';

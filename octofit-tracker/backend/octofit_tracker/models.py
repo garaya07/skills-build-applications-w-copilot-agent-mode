@@ -1,6 +1,6 @@
 from djongo import models
 
-class User(models.Model):
+class UserProfile(models.Model):
     email = models.EmailField(unique=True)
     name = models.CharField(max_length=100)
     team = models.CharField(max_length=100)
@@ -15,7 +15,7 @@ class Team(models.Model):
         return self.name
 
 class Activity(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     activity_type = models.CharField(max_length=100)
     duration = models.IntegerField()
     date = models.DateField()
@@ -30,7 +30,7 @@ class Workout(models.Model):
         return self.name
 
 class Leaderboard(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     score = models.IntegerField()
     rank = models.IntegerField()
     def __str__(self):
