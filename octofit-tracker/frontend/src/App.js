@@ -7,13 +7,26 @@ import Teams from './components/Teams';
 import Users from './components/Users';
 import Workouts from './components/Workouts';
 
+function Home() {
+  return (
+    <div className="welcome-hero">
+      <img src="/octofitapp-small.png" alt="OctoFit Tracker Logo" style={{ height: '80px', marginBottom: '20px' }} />
+      <h1>Welcome to Octofit Tracker!</h1>
+      <p>Track your fitness activities, compete with teams, and climb the leaderboard.</p>
+    </div>
+  );
+}
+
 function App() {
   return (
     <Router>
       <div className="App">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container">
-            <span className="navbar-brand">OctoFit Tracker</span>
+            <NavLink className="navbar-brand d-flex align-items-center" to="/">
+              <img src="/octofitapp-small.png" alt="OctoFit" style={{ height: '32px', marginRight: '8px' }} />
+              OctoFit Tracker
+            </NavLink>
             <button
               className="navbar-toggler"
               type="button"
@@ -25,19 +38,19 @@ function App() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/users">Users</NavLink>
+                  <NavLink className="nav-link" to="/activities">Activities</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/leaderboard">Leaderboard</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/teams">Teams</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/activities">Activities</NavLink>
+                  <NavLink className="nav-link" to="/users">Users</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/workouts">Workouts</NavLink>
-                </li>
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/leaderboard">Leaderboard</NavLink>
                 </li>
               </ul>
             </div>
@@ -46,7 +59,7 @@ function App() {
 
         <div className="container mt-4">
           <Routes>
-            <Route path="/" element={<Users />} />
+            <Route path="/" element={<Home />} />
             <Route path="/users" element={<Users />} />
             <Route path="/teams" element={<Teams />} />
             <Route path="/activities" element={<Activities />} />
