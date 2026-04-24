@@ -1,38 +1,148 @@
+/* OctoFit Tracker App Styles */
+body {
+  background-color: #f0f4f8;
+  color: #2d3748;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .App {
-  text-align: center;
+  text-align: left;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navbar */
+.navbar {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar-brand {
+  color: #e94560 !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar-brand img {
+  filter: drop-shadow(0 0 4px rgba(233, 69, 96, 0.5));
 }
 
+.nav-link {
+  color: #a8b2d8 !important;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #e94560 !important;
+}
+
+/* Page container */
+.container.mt-4 {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin-top: 24px !important;
+  margin-bottom: 24px;
+}
+
+/* Headings */
+h2 {
+  color: #0f3460;
+  border-bottom: 3px solid #e94560;
+  padding-bottom: 10px;
+  margin-bottom: 20px !important;
+  font-weight: 700;
+}
+
+/* Tables */
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-dark thead {
+  background: linear-gradient(135deg, #0f3460, #1a1a2e) !important;
+  color: #ffffff !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f8f9ff;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #ffffff;
+}
+
+.table tbody tr:hover {
+  background-color: #e8eeff !important;
+  transition: background-color 0.15s ease;
+}
+
+.table th {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-color: #dee2e6;
+}
+
+.table td {
+  border-color: #dee2e6;
+  color: #2d3748;
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, #e94560, #c62a47);
+  border-color: #e94560;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #c62a47, #a01f38);
+  border-color: #c62a47;
+}
+
+/* Leaderboard rank colors */
+.rank-1 {
+  color: #f6c90e;
+  font-weight: bold;
+}
+
+.rank-2 {
+  color: #a8a9ad;
+  font-weight: bold;
+}
+
+.rank-3 {
+  color: #cd7f32;
+  font-weight: bold;
+}
+
+/* Loading and error states */
+.text-danger {
+  color: #e94560 !important;
+}
+
+/* App-link */
 .App-link {
-  color: #61dafb;
+  color: #e94560;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Welcome text */
+.welcome-hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.welcome-hero h1 {
+  color: #0f3460;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+.welcome-hero p {
+  color: #4a5568;
+  font-size: 1.1rem;
 }
